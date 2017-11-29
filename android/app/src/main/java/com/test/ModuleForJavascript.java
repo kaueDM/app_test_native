@@ -1,5 +1,6 @@
 package com.test;
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.facebook.react.bridge.Promise;
@@ -27,6 +28,9 @@ public class ModuleForJavascript extends ReactContextBaseJavaModule {
     @ReactMethod
     public void showMyText(Promise promise) {
         javaOnly = new ModuleJavaOnly();
+
+        Intent i = new Intent(context, ModuleJavaOnly.class);
+        context.startActivityForResult(i, 0, null);
 
         Log.d("Text:: ", String.format("Context is null: %b", context == null));
         Log.d("Text:: ", String.format("getApplicationContext is null: %b", context.getApplicationContext() == null));

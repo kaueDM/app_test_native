@@ -21,6 +21,7 @@ public class ModuleJavaOnly extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.d("Text: ", "onCreate: Entrou no onCreate");
         setMyText("Hello World!");
 
     }
